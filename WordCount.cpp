@@ -95,7 +95,7 @@ int WordCount::decrWordCount(std::string word) {
 	//check at that index for word 
 	std::vector<std::pair<std::string, int> >& bucket = table[index];
 	int foundIndex = -1; 
-	for(int i = 0; i < bucket.size(); i++) {
+	for(int i = 0; i < (int) bucket.size(); i++) {
 		auto &pair = bucket[i]; 
 		if(pair.first == word) {
 			pair.second--; 
@@ -124,7 +124,7 @@ std::string WordCount::makeValidWord(std::string word) {
 	}
 	bool foundFirstAlpha = false; 
 	int indexOfLastAlpha; 
-	for(int i = 0; i < word.size(); i++) 
+	for(int i = 0; i < (int) word.size(); i++) 
 	{
 		if(foundFirstAlpha && (isWordChar(word[i]) || word[i] == '-' || word[i] == '\'')) {
 			newWord += word[i]; 
